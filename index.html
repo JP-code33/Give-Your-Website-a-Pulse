@@ -7,6 +7,34 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
+     <script>
+
+       function whatIsTheTime() {
+
+            var currentTime = new Date().toLocaleString(); 
+    
+            var timeText = document.querySelector("#timeElement");
+    
+   
+            timeText.innerHTML = currentTime; 
+        }
+        setInterval(whatIsTheTime, 1000);
+        whatIsTheTime();
+        
+    </script>
+    <div style="display: flex; justify-content: space-between; position: absolute; width: 100%; backdrop-filter: blur(10px); background-color: rgba(2, 79, 167, 0.918); color: #f5f2f2; animation: fadeUp 3s ease" @keyframes fadeUp{
+    from{
+        opacity:0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }>
+
+        <p style="margin-left: 16px;">AstroView</p>
+
+        <p id="timeElement" style="margin-right: 16px;" >7/22/2026, 10:33 AM</p></div>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
