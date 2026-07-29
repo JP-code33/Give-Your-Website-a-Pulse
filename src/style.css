@@ -1,0 +1,65 @@
+body {
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b1120;
+    color: white;
+}
+.container{
+    max-width: 1100px; margin: 50px auto;
+    padding: 28px;
+    text-align: center;
+    background: rgba(3, 101, 158, 0.7); backdrop-filter: blur(10px); border-radius: 20px;
+    animation: fadeUp 3s ease;
+}
+.apod-image, .apod-video{
+    width: 100%; max-width: 700px; border-radius: 14px; margin: 20px 0;
+}
+p{line-height: 1.5;}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.mainContent{
+    display: grid; grid-template-columns: 2fr 1fr; grid-template-areas: "media sidebar" "explanation sidebar";
+    gap: 29px;
+    align-items: start;
+    margin-top: 29px;
+}
+.media {
+  grid-area: media;
+}
+
+.sideBar {
+  grid-area: sidebar;
+}
+
+.explanation {
+  grid-area: explanation;
+}
+.media img, .media iframe {width: 100%; border-radius: 14px;}
+.sideBar{display: flex; flex-direction: column; gap: 20px;}
+.information {
+    background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px;
+    padding: 19px; text-align: left;
+}
+.information h2{margin: 16px 0;}
+.information p{margin: 16px 0;}
+.explanation{
+    margin-top: 30px; padding: 25px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; 
+    text-align: left;
+}
+@media(max-width: 768px){
+    .mainContent{
+        grid-template-columns: 1fr;
+    }
+    .information{
+        text-align: center;
+    }
+}
